@@ -1,7 +1,13 @@
 
-public interface Thing {
-    Boolean beats(Thing thing);
-    Boolean losesTo(Rock rock);
-    Boolean losesTo(Paper paper);
-    Boolean losesTo(Scissors scissors);
+public abstract class Thing {
+
+    private GameLogic gameLogic;
+
+    public Thing(GameLogic gameLogic) {
+        this.gameLogic = gameLogic;
+    }
+
+    public Boolean beats(Thing thing) {
+        return gameLogic.compare(this, thing);
+    }
 }

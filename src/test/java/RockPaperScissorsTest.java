@@ -1,3 +1,4 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -6,9 +7,19 @@ import static org.junit.Assert.assertThat;
 
 public class RockPaperScissorsTest {
 
-    private Thing rock = new Rock();
-    private Thing paper = new Paper();
-    private Thing scissors = new Scissors();
+    private Thing rock;
+    private Thing paper;
+    private Thing scissors;
+    private Thing spock;
+
+    @Before
+    public void setUp() throws Exception {
+        GameLogic gameLogic = new GameLogic();
+        rock = new Rock(gameLogic);
+        paper = new Paper(gameLogic);
+        scissors = new Scissors(gameLogic);
+        spock = new Spock(gameLogic);
+    }
 
     @Test
     public void rockBeatsRockReturnsNull() throws Exception {
@@ -53,6 +64,11 @@ public class RockPaperScissorsTest {
     @Test
     public void scissorsLosesToRock() throws Exception {
         assertThat(scissors.beats(rock), is(false));
+    }
+
+    @Test
+    public void spockVsSpockReturnNull() throws Exception {
+        assertBeatsItselfReturnNull(spock);
     }
 
     private void assertBeatsItselfReturnNull(Thing thing) {
