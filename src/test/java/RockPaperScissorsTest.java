@@ -39,8 +39,13 @@ public class RockPaperScissorsTest {
     }
 
     @Test
-    public void rockLostsToSpock() throws Exception {
+    public void rockLosesToSpock() throws Exception {
         assertThat(rock.beats(spock), is(false));
+    }
+
+    @Test
+    public void rockBeatsLizard() throws Exception {
+        assertThat(rock.beats(lizard), is(true));
     }
 
     @Test
