@@ -3,7 +3,7 @@ import javafx.util.Pair;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GameLogic {
+class GameLogic {
 
     private static Map<Pair<Class<? extends Thing>, Class<? extends Thing>>, Boolean> compareMap;
 
@@ -15,6 +15,7 @@ public class GameLogic {
         setRule(Scissors.class, Paper.class, true);
         setRule(Paper.class, Rock.class, true);
         setRule(Paper.class, Scissors.class, false);
+        setRule(Spock.class, Scissors.class, true);
     }
 
     private static Boolean setRule(Class<? extends Thing> first, Class<? extends Thing> second, Boolean value) {
@@ -22,7 +23,7 @@ public class GameLogic {
     }
 
     Boolean compare(Thing first, Thing second) {
-        return compareMap.get(new Pair<>(first.getClass(), second.getClass()));
+        return compareMap.get(new Pair<Class<? extends Thing>, Class<? extends Thing>>(first.getClass(), second.getClass()));
     }
 
 }
