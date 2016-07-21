@@ -25,6 +25,10 @@ class GameLogic {
         setRule(Spock.class, Rock.class, true);
         setRule(Spock.class, Paper.class, false);
         setRule(Spock.class, Lizard.class, false);
+        setRule(Lizard.class, Rock.class, false);
+        setRule(Lizard.class, Scissors.class, false);
+        setRule(Lizard.class, Paper.class, true);
+        setRule(Lizard.class, Spock.class, true);
     }
 
     private static Boolean setRule(Class<? extends Thing> first, Class<? extends Thing> second, Boolean value) {

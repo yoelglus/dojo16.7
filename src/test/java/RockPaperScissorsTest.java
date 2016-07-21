@@ -128,6 +128,25 @@ public class RockPaperScissorsTest {
         assertBeatsItselfReturnNull(lizard);
     }
 
+    @Test
+    public void lizardLosesToRock() throws Exception {
+        assertThat(lizard.beats(rock), is(false));
+    }
+
+    @Test
+    public void lizardLosesToScissors() throws Exception {
+        assertThat(lizard.beats(scissors), is(false));
+    }
+
+    @Test
+    public void lizardBeatsPaper() throws Exception {
+        assertThat(lizard.beats(paper), is(true));
+    }
+
+    @Test
+    public void lizardBeatsSpock() throws Exception {
+        assertThat(lizard.beats(spock), is(true));
+    }
 
     private void assertBeatsItselfReturnNull(Thing thing) {
         assertThat(thing.beats(thing), is(nullValue()));
