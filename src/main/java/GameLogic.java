@@ -16,6 +16,7 @@ class GameLogic {
         setRule(Paper.class, Rock.class, true);
         setRule(Paper.class, Scissors.class, false);
         setRule(Paper.class, Spock.class, true);
+        setRule(Paper.class, Lizard.class, false);
         setRule(Scissors.class, Rock.class, false);
         setRule(Scissors.class, Paper.class, true);
         setRule(Scissors.class, Spock.class, false);
