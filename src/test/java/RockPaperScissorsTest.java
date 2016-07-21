@@ -27,16 +27,6 @@ public class RockPaperScissorsTest {
     }
 
     @Test
-    public void paperBeatsPaperReturnsNull() throws Exception {
-        assertBeatsItselfReturnNull(paper);
-    }
-
-    @Test
-    public void scissorsBeatsScissorsReturnsNull() throws Exception {
-        assertBeatsItselfReturnNull(scissors);
-    }
-
-    @Test
     public void rockBeatsScissors() throws Exception {
         assertThat(rock.beats(scissors), is(true));
     }
@@ -47,6 +37,16 @@ public class RockPaperScissorsTest {
     }
 
     @Test
+    public void rockLostsToSpock() throws Exception {
+        assertThat(rock.beats(spock), is(false));
+    }
+
+    @Test
+    public void paperBeatsPaperReturnsNull() throws Exception {
+        assertBeatsItselfReturnNull(paper);
+    }
+
+    @Test
     public void paperBeatsRock() throws Exception {
         assertThat(paper.beats(rock), is(true));
     }
@@ -54,6 +54,11 @@ public class RockPaperScissorsTest {
     @Test
     public void paperLosesToScissors() throws Exception {
         assertThat(paper.beats(scissors), is(false));
+    }
+
+    @Test
+    public void scissorsBeatsScissorsReturnsNull() throws Exception {
+        assertBeatsItselfReturnNull(scissors);
     }
 
     @Test

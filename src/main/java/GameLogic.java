@@ -11,6 +11,7 @@ class GameLogic {
         compareMap = new HashMap<>();
         setRule(Rock.class, Paper.class, false);
         setRule(Rock.class, Scissors.class, true);
+        setRule(Rock.class, Spock.class, false);
         setRule(Scissors.class, Rock.class, false);
         setRule(Scissors.class, Paper.class, true);
         setRule(Paper.class, Rock.class, true);
