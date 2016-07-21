@@ -57,6 +57,11 @@ public class RockPaperScissorsTest {
     }
 
     @Test
+    public void paperBeatsSpock() throws Exception {
+        assertThat(paper.beats(spock), is(true));
+    }
+
+    @Test
     public void scissorsBeatsScissorsReturnsNull() throws Exception {
         assertBeatsItselfReturnNull(scissors);
     }
