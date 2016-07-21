@@ -11,6 +11,7 @@ public class RockPaperScissorsTest {
     private Thing paper;
     private Thing scissors;
     private Thing spock;
+    private Thing lizard;
 
     @Before
     public void setUp() throws Exception {
@@ -19,6 +20,7 @@ public class RockPaperScissorsTest {
         paper = new Paper(gameLogic);
         scissors = new Scissors(gameLogic);
         spock = new Spock(gameLogic);
+        lizard = new Lizard(gameLogic);
     }
 
     @Test
@@ -100,6 +102,12 @@ public class RockPaperScissorsTest {
     public void spockLosesToPaper() throws Exception {
         assertThat(spock.beats(paper), is(false));
     }
+
+    @Test
+    public void lizardVsLizardReturnNull() throws Exception {
+        assertBeatsItselfReturnNull(lizard);
+    }
+
 
     private void assertBeatsItselfReturnNull(Thing thing) {
         assertThat(thing.beats(thing), is(nullValue()));
