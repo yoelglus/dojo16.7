@@ -1,13 +1,13 @@
 
-public abstract class Thing {
+abstract class Thing {
 
     private GameLogic gameLogic;
 
-    public Thing(GameLogic gameLogic) {
+    Thing(GameLogic gameLogic) {
         this.gameLogic = gameLogic;
     }
 
-    public Boolean beats(Thing thing) {
-        return gameLogic.compare(this, thing);
+    Boolean beats(Thing thing) {
+        return gameLogic.playMatch(this, thing);
     }
 }
