@@ -76,6 +76,16 @@ public class RockPaperScissorsTest {
         assertThat(spock.beats(scissors), is(true));
     }
 
+    @Test
+    public void spockBeatsRock() throws Exception {
+        assertThat(spock.beats(rock), is(true));
+    }
+
+    @Test
+    public void spockLosesToPaper() throws Exception {
+        assertThat(spock.beats(paper), is(false));
+    }
+
     private void assertBeatsItselfReturnNull(Thing thing) {
         assertThat(thing.beats(thing), is(nullValue()));
     }
