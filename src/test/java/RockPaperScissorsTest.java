@@ -94,6 +94,11 @@ public class RockPaperScissorsTest {
     }
 
     @Test
+    public void scissorsBeatsLizard() throws Exception {
+        assertThat(scissors.beats(lizard), is(true));
+    }
+
+    @Test
     public void spockVsSpockReturnNull() throws Exception {
         assertBeatsItselfReturnNull(spock);
     }
@@ -111,6 +116,11 @@ public class RockPaperScissorsTest {
     @Test
     public void spockLosesToPaper() throws Exception {
         assertThat(spock.beats(paper), is(false));
+    }
+
+    @Test
+    public void spockLosesToLizard() throws Exception {
+        assertThat(spock.beats(lizard), is(false));
     }
 
     @Test
