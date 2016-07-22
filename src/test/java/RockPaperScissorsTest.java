@@ -80,6 +80,7 @@ public class RockPaperScissorsTest {
 
     private static void assertBeats(Thing first, Thing second) {
         assertThat(first.beats(second), is(true));
+        assertThat(second.beats(first), is(false));
     }
 
     private static void assertDrawIfTwoOf(Thing... things) {
